@@ -17,7 +17,39 @@ NOTE: make sure the out_train and out_val files are empty before this (or if you
 """
 
 
-#29 activites
+# #29 activites
+# gt_labels = ["Cook.Cut"             ,
+#         "Cook.Usemicrowave"     ,
+#         "Cook.Useoven"          ,
+#         "Cook.Usestove"         ,
+#         "Drink.Frombottle"      ,
+#         "Drink.Fromcup"         ,
+#         "Eat.Snack"             ,
+#         "Eat.Useutensil"        ,
+#         "Exercise"              ,
+#         "Getup"                 ,
+#         "Lay.Onbed"             ,
+#         "Nap"                   ,
+#         "Play.Boardgame"        ,
+#         "Read"                  ,
+#         "Use.Coffeemachine"     ,
+#         "Use.Computer"          ,
+#         "Use.Dishwasher"        ,
+#         "Use.Gamecontroller"    ,
+#         "Use.Kettle"            ,
+#         "Use.Mop"               ,
+#         "Use.Phone"             ,
+#         "Use.Refrig"            ,
+#         "Use.Shelf"             ,
+#         "Use.Sink"              ,
+#         "Use.Switch"            ,
+#         "Use.Tablet"            ,
+#         "Use.Vaccum"            ,
+#         "Watch.TV"              ,
+#         "Write"                             
+#         ]
+
+#full dataset 31 activities
 gt_labels = ["Cook.Cut"             ,
         "Cook.Usemicrowave"     ,
         "Cook.Useoven"          ,
@@ -26,9 +58,11 @@ gt_labels = ["Cook.Cut"             ,
         "Drink.Fromcup"         ,
         "Eat.Snack"             ,
         "Eat.Useutensil"        ,
+        "Enter"                 ,
         "Exercise"              ,
         "Getup"                 ,
         "Lay.Onbed"             ,
+        "Leave"                 ,
         "Nap"                   ,
         "Play.Boardgame"        ,
         "Read"                  ,
@@ -46,13 +80,12 @@ gt_labels = ["Cook.Cut"             ,
         "Use.Tablet"            ,
         "Use.Vaccum"            ,
         "Watch.TV"              ,
-        "Write"                             
-        ]
+        "Write"
+]      
 
-
-base = '/home/abhi/research/SmartHome/Data/youhome_mp4_data/mp4data'
-out_train = 'evl_format/train.txt'
-out_val = 'evl_format/val.txt'
+base = '/home/abhi/research/SmartHome/Data/mp4data_2021'
+out_train = 'evl_format/full_dataset/train.txt'
+out_val = 'evl_format/full_dataset/val.txt'
 files = []
 train_ct, val_ct = {i:0 for i in gt_labels},{i:0 for i in gt_labels}
 
@@ -103,6 +136,7 @@ print("val_count",val_ct)
 
 
 """
+For og_dataset: 
 (cv) abhi@abhi-MS-7C56:~/research/SmartHome/Data$ python create_evl_format.py 
 At p: p199
 At p: p101
@@ -116,5 +150,8 @@ At p: p105
 At p: p102
 train_count {'Cook.Cut': 17, 'Cook.Usemicrowave': 13, 'Cook.Useoven': 15, 'Cook.Usestove': 13, 'Drink.Frombottle': 86, 'Drink.Fromcup': 93, 'Eat.Snack': 95, 'Eat.Useutensil': 65, 'Exercise': 32, 'Getup': 23, 'Lay.Onbed': 25, 'Nap': 34, 'Play.Boardgame': 69, 'Read': 89, 'Use.Coffeemachine': 9, 'Use.Computer': 91, 'Use.Dishwasher': 13, 'Use.Gamecontroller': 59, 'Use.Kettle': 14, 'Use.Mop': 21, 'Use.Phone': 90, 'Use.Refrig': 8, 'Use.Shelf': 20, 'Use.Sink': 17, 'Use.Switch': 94, 'Use.Tablet': 87, 'Use.Vaccum': 25, 'Watch.TV': 33, 'Write': 92}
 val_count {'Cook.Cut': 3, 'Cook.Usemicrowave': 5, 'Cook.Useoven': 5, 'Cook.Usestove': 7, 'Drink.Frombottle': 26, 'Drink.Fromcup': 19, 'Eat.Snack': 16, 'Eat.Useutensil': 17, 'Exercise': 8, 'Getup': 7, 'Lay.Onbed': 5, 'Nap': 6, 'Play.Boardgame': 22, 'Read': 23, 'Use.Coffeemachine': 1, 'Use.Computer': 20, 'Use.Dishwasher': 7, 'Use.Gamecontroller': 11, 'Use.Kettle': 6, 'Use.Mop': 9, 'Use.Phone': 25, 'Use.Refrig': 2, 'Use.Shelf': 10, 'Use.Sink': 3, 'Use.Switch': 18, 'Use.Tablet': 25, 'Use.Vaccum': 5, 'Watch.TV': 7, 'Write': 21}
+
+
+For full_dataset:
 
 """
